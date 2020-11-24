@@ -5,10 +5,18 @@
     <title>Labyrinth</title>
     <meta name="viewport" content="width=device-width; initial-scale=1">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/ngokevin/kframe/d7bd9968/components/sun-sky/dist/aframe-sun-sky.min.js"></script>
+    <script src="https://raw.githubusercontent.com/n5ro/aframe-extras/master/dist/aframe-extras.min.js"></script>
 </head>
 <body>
     <a-scene>
-        <a-sky color="skyblue"></a-sky>
+        <a-assets>
+            <img src="./assets/grass.jpg" id="grass" />
+        </a-assets>
+
+        <a-sun-sky material="sunPosition: 0 1 0;"></a-sun-sky>
+
+        <a-grid src="#grass"></a-grid>
     </a-scene>
 </body>
 </html>
