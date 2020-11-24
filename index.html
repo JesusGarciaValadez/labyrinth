@@ -18,11 +18,13 @@
 
         <a-entity id="player"
                   camera
+                  kinematic-body
                   universal-controls
                   position="0 1.6 0"
         ></a-entity>
 
-        <a-grid src="#grass"></a-grid>
+        <a-grid static-body
+                src="#grass"></a-grid>
     </a-scene>
 </body>
 </html>
