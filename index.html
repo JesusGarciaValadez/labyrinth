@@ -12,6 +12,7 @@
     <a-scene>
         <a-assets>
             <img src="./assets/grass.jpg" id="grass" />
+            <img src="./assets/wall.jpg" id="wall" />
         </a-assets>
 
         <a-sun-sky material="sunPosition: 0 1 0"></a-sun-sky>
@@ -22,6 +23,15 @@
                   universal-controls
                   position="0 1.6 0"
         ></a-entity>
+
+        <a-box static-body
+               position="0 0 -5"
+               color="red"
+               width="2"
+               height="10"
+               depth="0.2"
+               src="#wall"
+        ></a-box>
 
         <a-grid static-body
                 src="#grass"></a-grid>
