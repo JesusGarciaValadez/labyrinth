@@ -10,7 +10,7 @@
 </head>
 <body>
     <a-scene>
-        <a-assets>
+        <a-assets timeout="3000">
             <img src="./assets/grass.jpg" id="grass" crossorigin="anonymous" />
             <img src="./assets/wall.jpg" id="wall" crossorigin="anonymous" />
         </a-assets>
@@ -25,72 +25,12 @@
         ></a-entity>
 
         <a-entity id="wallsContainer"></a-entity>
+        <a-entity id="pricesContainer"></a-entity>
 
         <a-grid static-body
                 src="#grass"></a-grid>
     </a-scene>
 
-    <script>
-        const WALL = 1
-        const PLAYER = 2
-        const PRICE = 3
-
-        const WALL_SIZE = 5
-        const WALL_HEIGHT = 3
-        const WALL_WIDTH = 5
-        const WALL_DEPTH = 5
-        const WALLS_CONTAINER = document.querySelector('#wallsContainer')
-
-        const gameMap = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 3, 1, 0, 0],
-            [0, 0, 1, 3, 0, 0, 0, 1, 0, 0],
-            [0, 0, 1, 0, 0, 1, 1, 1, 0, 0],
-            [0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
-            [0, 1, 3, 0, 2, 1, 0, 1, 0, 0],
-            [0, 1, 0, 1, 1, 1, 0, 1, 0, 0],
-            [0, 1, 1, 1, 0, 0, 3, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ]
-
-        gameMap.map((set, setIndex) => {
-            set.map((element, elementIndex) => {
-                const position = (setIndex - gameMap.length / 2) * WALL_SIZE + ' ' + 1.5 + ' ' + (elementIndex - set.length / 2) * WALL_SIZE
-                let wall
-
-                switch(element) {
-                    case WALL:
-                        wall = document.createElement('a-box')
-                        WALLS_CONTAINER.appendChild(wall)
-                        wall.setAttribute('color', '#fff')
-                        wall.setAttribute('material', 'src: #wall')
-                        wall.setAttribute('width', 3)
-                        wall.setAttribute('height', WALL_HEIGHT)
-                        wall.setAttribute('width', WALL_WIDTH)
-                        wall.setAttribute('depth', WALL_DEPTH)
-                        wall.setAttribute('position', position)
-                        wall.setAttribute('static-body', '')
-                    case PLAYER:
-
-                    case PRICE:
-
-                    default:
-
-                }
-                if (element === WALL) {
-
-                }
-
-                if (element === PLAYER) {
-
-                }
-
-                if (element === PRICE) {
-
-                }
-            })
-        })
-    </script>
+    <script src="./index.js" type="application/javascript"></script>
 </body>
 </html>
