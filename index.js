@@ -65,7 +65,7 @@ GAME_MAP.map((set, setIndex) => {
 })
 
 const prices = Array.from(document.querySelectorAll('.prices'))
-const score = prices.length
+let score = prices.length
 
 SCORE_CONTAINER.setAttribute('value', `You have ${score} prices left to win!`)
 
@@ -76,7 +76,7 @@ prices.map(price => {
         SCORE_CONTAINER.setAttribute('value', `You have ${score} prices left to win!`)
 
         if (score <= 0) {
-            SCORE_CONTAINER.setAttribute('value', `You won!`)
+            SCORE_CONTAINER.setAttribute('value', 'You won!')
         }
     })
 })
