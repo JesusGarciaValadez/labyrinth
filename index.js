@@ -64,7 +64,7 @@ GAME_MAP.map((set, setIndex) => {
     })
 })
 
-const prices = Array.from(document.querySelectorAll('.prices'))
+const prices = Array.from(document.querySelectorAll('.price'))
 let score = prices.length
 
 SCORE_CONTAINER.setAttribute('value', `You have ${score} prices left to win!`)
