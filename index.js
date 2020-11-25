@@ -36,14 +36,12 @@ const createWall = position => {
 }
 
 const createPrice = position => {
-    const price = document.createElement('a-circle')
+    const price = document.createElement('a-sphere')
     WALLS_CONTAINER.appendChild(price)
+    price.setAttribute('position', position)
+    price.setAttribute('class', 'price')
     price.setAttribute('color', 'orange')
     price.setAttribute('radius', 1)
-    price.setAttribute('position', position)
-    price.setAttribute('static-body', '')
-    price.setAttribute('class', 'price')
-
 }
 
 gameMap.map((set, setIndex) => {
